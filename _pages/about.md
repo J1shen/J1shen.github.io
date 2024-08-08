@@ -9,7 +9,7 @@ redirect_from:
 
 I'm a first-year Ph.D. student from [School of Computing](https://www.comp.nus.edu.sg/), [National University of Singapore](https://nus.edu.sg/). My research interests include **Machine Learning Systems**, **Artificial Intelligence** and **FinTech**.
 
-I graduate from [Zhejiang University](https://https://www.zju.edu.cn/) with major in Automation, [College of Control Science and Engineering](https://cse.zju.edu.cn/) & Entrepreneurship, [Chu Kochen Honors College](https://ckc.zju.edu.cn/).
+I graduate from [Zhejiang University](https://https://www.zju.edu.cn/) with majors in **Automation**, [College of Control Science and Engineering](https://cse.zju.edu.cn/) & **Entrepreneurship**, [Chu Kochen Honors College](https://ckc.zju.edu.cn/).
 
 I am very fortunate to be advised by [Asst Prof. Yao Lu](https://yao.lu/) of System Lab from [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore.
 
