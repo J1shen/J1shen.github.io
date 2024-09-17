@@ -13,7 +13,7 @@ I graduate from [Zhejiang University](https://www.zju.edu.cn/) with majors in **
 
 I am very fortunate to be advised by [Asst Prof. Yao Lu](https://yao.lu/) of System Lab from [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore.
 
-My CV is here: [Junyi's Curriculum Vitae](../files/Curriculum_Vitae.pdf).
+My CV is here: [Junyi's Curriculum Vitae](../files/Resume.pdf).
 
 Social Media: [Wechat](../images/Wechat.jpg), [Instagram](../images/Instagram.jpg)
 

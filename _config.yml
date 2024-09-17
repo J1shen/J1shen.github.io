@@ -6,7 +6,7 @@
 
 # Basic Site Settings
 locale                   : "en-SG"
-title                    : "Be like wind"
+title                    : "Junyi's Homepage"
 title_separator          : "-"
 name                     : &name "Junyi Shen"
 description              : &description "PhD Student"
@@ -46,6 +46,7 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
+  linkedin         : junyi-shen
   instagram        : j1shen
   telegram         : # URL
   bluesky          : # Username
@@ -56,12 +57,11 @@ author:
   google_plus      : # Username
   keybase          : # Username
   lastfm           : # Username
-  linkedin         : junyi-shen
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
   soundcloud       : # Username
-  steam            : "https://steamcommunity.com/profiles/76561199078288313/"
+  steam            : # Username
   tumblr           : # Username
   twitter          : # Username for X / Twitter
   vine             : # Username
