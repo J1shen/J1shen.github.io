@@ -11,7 +11,7 @@ I'm a first-year Ph.D. student from [School of Computing](https://www.comp.nus.e
 
 I graduate from [Zhejiang University](https://www.zju.edu.cn/) with majors in **Automation**, [College of Control Science and Engineering](https://cse.zju.edu.cn/) & **Entrepreneurship**, [Chu Kochen Honors College](https://ckc.zju.edu.cn/).
 
-I am very fortunate to be advised by [Asst Prof. Yao Lu](https://yao.lu/) of System Lab from [School of Computing](https://www.comp.nus.edu.sg/), National University of Singapore.
+I am very fortunate to be advised by [Asst Prof. Yao Lu](https://yao.lu/) of System Lab from School of Computing, National University of Singapore.
 
 My CV is here: [Junyi's Curriculum Vitae](../files/Resume.pdf).
 
