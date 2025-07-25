@@ -1,124 +1,157 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>Junyi Shen</title>
     <meta name="author" content="Junyi Shen">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/avater.jpg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <!-- 全局字体大小与响应式图片调整 -->
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <!-- 全局字体与响应式图片风格 -->
     <style>
-      /* Fluid typography: adapts between 14px and 18px based on viewport width */
+      /* 提升整体字体基准，最大20px */
       html {
-        font-size: clamp(14px, 1rem + 1vw, 18px);
+        font-size: clamp(16px, 1.1rem + 1vw, 20px);
       }
-      /* Global page styling */
       body {
-        font-family: sans-serif;
-        font-size: 1rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;  /* 默认约18px */
         line-height: 1.6;
         margin: 0;
         padding: 0;
       }
-      /* Section headings */
       h2 {
-        font-size: 1.5rem;
+        font-size: 1.75rem;  /* 约35px */
         margin: 1.5rem 0 0.5rem;
       }
-      /* Personal name prominence */
       .name {
-        font-size: 2rem;
+        font-size: 2.25rem;  /* 约45px */
         margin: 0.5rem 0;
       }
-      /* Paragraphs and list items */
       p, ul li {
-        font-size: 1rem;
+        font-size: 1.125rem;  /* 与正文一致 */
       }
-      /* Links inside text */
       p a, ul li a {
-        font-size: 0.9375rem;
+        font-size: 1rem;      /* 约18px */
       }
-      /* Responsive adjustments for small screens */
+      .personal-intro table {
+        width: 100%;
+        margin: 0 auto;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+      .personal-intro td {
+        padding: 2.5%;
+        vertical-align: middle;
+      }
       @media (max-width: 600px) {
-        html {
-          font-size: clamp(12px, 1rem + 1vw, 16px);
+        /* 移动端略微降低字体，但仍高于之前 */
+        html { font-size: clamp(14px, 1rem + 1vw, 18px); }
+        body { font-size: 1.0625rem; } /* 约17px */
+        .name { font-size: 2rem; }
+        h2 { font-size: 1.5rem; }
+        .personal-intro tr {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
         }
-        .name { font-size: 1.5rem; }
-        h2      { font-size: 1.25rem; }
+        .personal-intro td {
+          width: 100% !important;
+          box-sizing: border-box;
+        }
       }
-      /* Ensure images maintain their aspect ratio without cropping */
+      /* 默认图片样式 */
       img {
         display: block;
         width: 100%;
         height: auto;
         object-fit: contain;
       }
+      /* 头像样式 */
+      .profile-img {
+        object-fit: cover;
+        border-radius: 50%;
+        max-width: 200px;
+        margin: 0 auto;
+      }
+      /* 徽标/Logo 样式 */
+      .logo-img {
+        max-width: 150px;
+        height: auto;
+        margin: 0 auto;
+        object-fit: contain;
+      }
     </style>
   </head>
   <body>
-    <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"><tbody>
+    <table style="width:100%;max-width:800px;margin:0 auto;border-collapse:separate;border-spacing:0;"><tbody>
       <tr><td>
 
-        <!-- 个人简介 -->
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"><tbody>
-          <tr>
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p class="name" style="text-align:center;">Junyi Shen (沈骏一)</p>
-              <p>Hey, I'm Junyi, a second-year PhD student at <a href="https://www.comp.nus.edu.sg/"><b>School of Computing</b></a>, <b>National University of Singapore</b>. I am very fortunate to be advised by <a href="https://yao.lu/">Prof. Yao Lu</a> in <a href="https://yao.lu/students.html">Scalable AI Lab</a>. Before that, I received my B.E. degree from <a href="http://www.cse.zju.edu.cn/cseenglish/main.htm">Zhejiang University</a> with honors from <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>, advised by <a href="https://person.zju.edu.cn/en/shibohe#0">Prof. Shibo He</a>.</p>
-              <p>I enjoy anime, manga, and video games. I am also a big fan of traveling and photography.</p>
-              <p>My research interests lie in <b>Machine Learning Systems</b>, <b>AI Infra</b>, and <b>broad Artificial Intelligence</b>.</p>
-              <p style="text-align:center;"><a href="mailto:j1shen@comp.nus.edu.sg">Email</a> &nbsp;/&nbsp;<a href="https://scholar.google.com/citations?user=YgWz1yMAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;<a href="https://www.linkedin.com/in/junyi-shen">LinkedIn</a> &nbsp;/&nbsp;<a href="https://github.com/j1shen">Github</a></p>
-            </td>
-            <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:middle;">
-              <a href="images/avater.png"><img src="images/avater.png" alt="profile photo" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
+        <!-- 个人简介区块 -->
+        <div class="personal-intro">
+          <table>
+            <tbody>
+              <tr>
+                <td style="width:63%;text-align:left;">
+                  <p class="name" style="text-align:center;">Junyi Shen (沈骏一)</p>
+                  <p>Hey, I'm Junyi, a second-year PhD student at <a href="https://www.comp.nus.edu.sg/"><b>School of Computing</b></a>, <b>National University of Singapore</b>. I am very fortunate to be advised by <a href="https://yao.lu/">Prof. Yao Lu</a> in <a href="https://yao.lu/students.html">Scalable AI Lab</a>. Before that, I received my B.E. degree from <a href="http://www.cse.zju.edu.cn/cseenglish/main.htm">Zhejiang University</a> with honors from <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>, advised by <a href="https://person.zju.edu.cn/en/shibohe#0">Prof. Shibo He</a>.</p>
+                  <p>I enjoy anime, manga, and video games. I am also a big fan of traveling and photography.</p>
+                  <p>My research interests lie in <b>Machine Learning Systems</b>, <b>AI Infra</b>, and <b>broad Artificial Intelligence</b>.</p>
+                  <p style="text-align:center;"><a href="mailto:j1shen@comp.nus.edu.sg">Email</a> &nbsp;/&nbsp;<a href="https://scholar.google.com/citations?user=YgWz1yMAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;<a href="https://www.linkedin.com/in/junyi-shen">LinkedIn</a> &nbsp;/&nbsp;<a href="https://github.com/j1shen">Github</a></p>
+                </td>
+                <td style="width:37%;text-align:center;">
+                  <a href="images/avater.png"><img src="images/avater.png" alt="profile photo" class="profile-img"></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <!-- Recent News -->
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"><tbody>
+        <table style="width:100%;margin:0 auto;border-collapse:separate;border-spacing:0;"><tbody>
           <tr><td style="padding:16px;vertical-align:middle;"><h2>Recent News</h2>
             <div style="background-color:#E7F4FF;padding:8px;border-radius:4px;margin-top:18px;"><ul style="margin:0;padding:0 0 0 20px;"><li>[2025/5/15] <a href="https://arxiv.org/abs/2506.01979">SpecBranch</a> submitted to NeurIPS 2025!</li><li>[2024/8/10] I'm currently pursuing my PhD at NUS!</li></ul></div>
           </td></tr>
         </tbody></table>
 
         <!-- Education -->
-        <table style="width:100%;border:0;border-spacing:0 10px;border-collapse:separate;margin:0 auto;"><tbody>
+        <table style="width:100%;margin:0 auto;border-collapse:separate;border-spacing:0 10px;"><tbody>
           <tr><td colspan="2"><h2>Education</h2></td></tr>
           <tr>
-            <td style="padding:16px;width:20%;vertical-align:middle;"><div id="NUS" style="width:100%;aspect-ratio:1/1;overflow:hidden;position:relative;"><img src="images/nus.jpg" alt="nus"></div></td>
+            <td style="padding:16px;width:20%;vertical-align:middle;"><div style="text-align:center;"><img src="images/nus.png" alt="nus" class="logo-img"></div></td>
             <td style="padding:8px;width:80%;vertical-align:middle;"><b>National University of Singapore</b>, Singapore<br><i>Ph.D. in Computer Science</i>, 2024 - Present<br>President Graduate Fellowship <b>(PGF)</b><br>Advisor: <a href="https://yao.lu/">Yao Lu</a><br>GPA: 4.9/5.0<br><details><summary>Selected Courses</summary><ul><li>CS6216: Advanced Topics in Machine Learning</li><li>CS6223: Advanced Topics in Software Testing</li><li>CS6222: Advanced Topics in Computational Biology</li><li>CS6240: Multimedia Analysis</li><li>CS6206: Advanced Topics in Human-Computer Interaction</li></ul></details></td>
           </tr>
           <tr>
-            <td style="padding:16px;width:20%;vertical-align:middle;"><div id="ZJU" style="width:100%;aspect-ratio:1/1;overflow:hidden;position:relative;"><img src="images/zju.png" alt="zju"></div></td>
+            <td style="padding:16px;width:20%;vertical-align:middle;"><div style="text-align:center;"><img src="images/zju.png" alt="zju" class="logo-img"></div></td>
             <td style="padding:8px;width:80%;vertical-align:middle;"><b>Zhejiang University</b>, Hangzhou, China<br><i>Bachelor of Engineering in Automation</i>, 2020 - 2024<br>National Scholarship<br>Advisor: <a href="https://person.zju.edu.cn/en/shibohe#0">Shibo He</a><br>GPA: 3.98/4.00<br></td>
           </tr>
         </tbody></table>
 
         <!-- Publications -->
-        <table style="width:100%;border:0;border-spacing:0 10px;border-collapse:separate;margin:0 auto;"><tbody>
+        <table style="width:100%;margin:0 auto;border-collapse:separate;border-spacing:0 10px;"><tbody>
           <tr><td colspan="2"><h2>Publications</h2></td></tr>
           <tr>
-            <td style="padding:16px;width:40%;vertical-align:middle;"><div id="specbranch" style="width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;"><img src="images/specbranch.png" alt="SpecBranch"></div></td>
+            <td style="padding:16px;width:40%;vertical-align:middle;"><div style="position:relative;"><img src="images/specbranch.png" alt="SpecBranch"></div></td>
             <td style="padding:8px;width:60%;vertical-align:middle;"><span class="papertitle">SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism</span><br><a href="https://scholar.google.com/citations?user=kYveqcQAAAAJ&hl=en&oi=ao">Yuhao Shen*</a>, <strong>Junyi Shen*</strong>, Quan Kong, <a href="https://smart-lty.github.io/">Tianyu Liu</a>, <a href="https://yao.lu/">Yao Lu</a>, <a href="https://cwang-zju.github.io/">Cong Wang</a><br>Submitted to <em>NeurIPS 2025</em><br><a href="https://arxiv.org/abs/2506.01979">arXiv</a><p>A comprehensive pipeline to accelerate Speculative Decoding via a hybrid parallelism method.</p></td>
           </tr>
         </tbody></table>
 
-        <!-- Profession -->
-        <table style="width:100%;border:0;border-spacing:0 10px;border-collapse:separate;margin:0 auto;"><tbody>
-          <tr><td colspan="2"><h2>Profession</h2></td></tr>
-          <tr><td style="padding:16px;width:20%;vertical-align:middle;"><div id="qz" style="width:100%;aspect-ratio:1/1;overflow:hidden;position:relative;"><img src="images/qz.png" alt="qz"></div></td><td style="padding:8px;width:80%;vertical-align:middle;"><b>Research Intern, Shanghai Qi Zhi Institute</b><br>Nov. 2023 - May. 2024<br>Advisor: <a href="https://people.iiis.tsinghua.edu.cn/~huanchen/index.html">Huanchen Zhang</a>, <a href="https://yao.lu/">Yao Lu</a><br>Shanghai, China</td></tr>
-          <tr><td style="padding:16px;width:20%;vertical-align:middle;"><div id="hku" style="width:100%;aspect-ratio:1/1;overflow:hidden;position:relative;"><img src="images<hku.jpg" alt="hku"></div></td><td style="padding:8px;width:80%;vertical-align:middle;"><b>Student Research Assistant, The University of Hong Kong</b><br>July. 2023 - Aug. 2023<br>Advisor: <a href="https://hszhao.github.io/">Hengshuang Zhao</a><br>Hong Kong SAR, China</td></tr>
+        <!-- Experience -->
+        <table style="width:100%;margin:0 auto;border-collapse:separate;border-spacing:0 10px;"><tbody>
+          <tr><td colspan="2"><h2>Experience</h2></td></tr>
+          <tr><td style="padding:16px;width:20%;vertical-align:middle;"><div style="text-align:center;"><img src="images/qz.png" alt="qz" class="logo-img"></div></td><td style="padding:8px;width:80%;vertical-align:middle;"><b>Research Intern, Shanghai Qi Zhi Institute</b><br>Nov. 2023 - May. 2024<br>Advisor: <a href="https://people.iiis.tsinghua.edu.cn/~huanchen/index.html">Huanchen Zhang</a>, <a href="https://yao.lu/">Yao Lu</a><br>Shanghai, China</td></tr>
+          <tr><td style="padding:16px;width:20%;vertical-align:middle;"><div style="text-align:center;"><img src="images/hku.png" alt="hku" class="logo-img"></div></td><td style="padding:8px;width:80%;vertical-align:middle;"><b>Student Research Assistant, The University of Hong Kong</b><br>July. 2023 - Aug. 2023<br>Advisor: <a href="https://hszhao.github.io/">Hengshuang Zhao</a><br>Hong Kong SAR, China</td></tr>
         </tbody></table>
 
         <!-- Teaching -->
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"><tbody>
+        <table style="width:100%;margin:0 auto;border-collapse:separate;border-spacing:0;"><tbody>
           <tr><td style="padding:16px;width:100%;vertical-align:middle;"><h2>Teaching</h2><b>Teaching Assistant, NUS</b><br><i>CS6216: Advanced Topics in Machine Learning</i>, 2025-2026 SEM1</td></tr>
         </tbody></table>
 
         <!-- Footer -->
-        <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;"><tbody>
+        <table style="width:100%;margin:0 auto;border-collapse:separate;border-spacing:0;"><tbody>
           <tr><td style="padding:0;"><p style="text-align:center;font-size:small;margin-top:2rem;">Modified from <a href="https://github.com/jonbarron/jonbarron_website">jonbarron</a>.</p></td></tr>
         </tbody></table>
 
