@@ -1,0 +1,90 @@
+/* Global font sizing and flow-responsive typography */
+html {
+  font-size: clamp(16px, 1.1rem + 1vw, 20px);
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Headings and name styles */
+h2 {
+  font-size: 1.75rem;
+  margin: 1.5rem 0 0.5rem;
+}
+.name {
+  font-size: 2.25rem;
+  margin: 0.5rem 0;
+}
+
+/* Paragraphs and list items */
+p, ul li {
+  font-size: 1.125rem;
+}
+p a, ul li a {
+  font-size: 1rem;
+}
+
+/* Responsive image defaults */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Profile image */
+.profile-img {
+  object-fit: cover;
+  border-radius: 50%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Logo / institution image */
+.logo-img {
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Personal intro layout */
+.personal-intro table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.personal-intro td {
+  padding: 2.5%;
+  vertical-align: middle;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  html {
+    font-size: clamp(14px, 1rem + 1vw, 18px);
+  }
+  body {
+    font-size: 1.0625rem;
+  }
+  .name {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .personal-intro tr {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .personal-intro td {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}
