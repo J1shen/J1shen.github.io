@@ -1,16 +1,39 @@
-/* Global font sizing and flow-responsive typography */
+/* —— 容器宽度 —— */
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* —— Global font sizing and responsive typography —— */
 html {
   font-size: clamp(16px, 1.1rem + 1vw, 20px);
 }
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 1.125rem;
   line-height: 1.6;
 }
 
-/* Headings and name styles */
+/* —— Personal intro 布局 —— */
+.personal-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: nowrap;         /* 桌面端强制并排 */
+}
+.personal-intro > div:first-child {
+  flex: 0 0 250px;           /* 头像区块固定宽度 */
+  text-align: center;
+  margin-bottom: 0;
+}
+.personal-intro > div:last-child {
+  flex: 1 1 auto;            /* 文字区块占满剩余空间 */
+}
+
+/* —— Headings and name styles —— */
 h2 {
   font-size: 1.75rem;
   margin: 1.5rem 0 0.5rem;
@@ -20,7 +43,7 @@ h2 {
   margin: 0.5rem 0;
 }
 
-/* Paragraphs and list items */
+/* —— Paragraphs and list items —— */
 p, ul li {
   font-size: 1.125rem;
 }
@@ -28,7 +51,7 @@ p a, ul li a {
   font-size: 1rem;
 }
 
-/* Responsive image defaults */
+/* —— Responsive image defaults —— */
 img {
   display: block;
   width: 100%;
@@ -36,15 +59,15 @@ img {
   object-fit: contain;
 }
 
-/* Profile image */
+/* —— Profile image —— */
 .profile-img {
   object-fit: cover;
   border-radius: 50%;
-  max-width: 200px;
+  max-width: 250px;
   margin: 0 auto;
 }
 
-/* Logo / institution image */
+/* —— Logo / institution image —— */
 .logo-img {
   max-width: 150px;
   height: auto;
@@ -52,19 +75,43 @@ img {
   object-fit: contain;
 }
 
-/* Personal intro layout */
-.personal-intro table {
-  width: 100%;
-  margin: 0 auto;
-  border-collapse: separate;
-  border-spacing: 0;
+/* —— Education 区块间距 —— */
+.education table td {
+  vertical-align: top;
+  padding: 1rem 1.5rem;
 }
-.personal-intro td {
-  padding: 2.5%;
+.education .logo-img {
+  margin: 0 1.5rem 0 0;
+}
+
+/* —— Profession 区块间距 —— */
+.profession table td {
+  vertical-align: top;
+  padding: 1rem 1.5rem;
+}
+.profession .logo-img {
+  margin: 0 1.5rem 0 0;
+}
+
+/* —— Publications 区块：3:7 分栏 & 调小文字 & 垂直居中 —— */
+.publications table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.publications table td:first-child {
+  width: 30%;
+  padding-right: 1.5rem;
+  vertical-align: middle;
+}
+.publications table td:last-child {
+  width: 70%;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: 1rem;
   vertical-align: middle;
 }
 
-/* Mobile adjustments */
+/* —— Mobile adjustments —— */
 @media (max-width: 600px) {
   html {
     font-size: clamp(14px, 1rem + 1vw, 18px);
@@ -78,13 +125,46 @@ img {
   h2 {
     font-size: 1.5rem;
   }
-  .personal-intro tr {
-    display: flex;
+
+  /* Personal intro 堆叠 */
+  .personal-intro {
+    flex-wrap: wrap;
     flex-direction: column-reverse;
     align-items: center;
   }
-  .personal-intro td {
+  .personal-intro > div:first-child,
+  .personal-intro > div:last-child {
     width: 100% !important;
     box-sizing: border-box;
+    margin-bottom: 1.5rem;
   }
+
+  /* Publications 堆叠 */
+  .publications table td:first-child,
+  .publications table td:last-child {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0 !important;
+  }
+}
+
+/* —— 给每个 section 增加内边距 —— */
+section {
+  padding: 2rem 1rem;
+}
+
+/* —— 标题下的分割线 —— */
+section > h2 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* —— 交替底色 —— */
+section:nth-of-type(odd) {
+  background-color: #e9e9e9;
+}
+
+section:nth-of-type(even) {
+  background-color: #ffffff;
 }

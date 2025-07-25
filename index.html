@@ -6,31 +6,32 @@
     <meta name="author" content="Junyi Shen">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/avater.jpg" type="image/x-icon">
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Font: Merriweather -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Inline override to apply Merriweather globally -->
+    <style>
+      body { font-family: 'Merriweather', serif; }
+    </style>
+
     <!-- External Stylesheet -->
     <link rel="stylesheet" href="style.css">
   </head>
+
   <body>
-    <div class="wrapper" style="max-width:800px;margin:0 auto;">
+    <div class="wrapper">
       <!-- Personal Intro -->
       <div class="personal-intro">
-        <table>
-          <tbody>
-            <tr>
-              <td style="width:63%;text-align:left;">
-                <p class="name" style="text-align:center;">Junyi Shen (沈骏一)</p>
-                <p>Hey, I'm Junyi, a second-year PhD student at <a href="https://www.comp.nus.edu.sg/"><b>School of Computing</b></a>, <b>National University of Singapore</b>. I am very fortunate to be advised by <a href="https://yao.lu/">Prof. Yao Lu</a> in <a href="https://yao.lu/students.html">Scalable AI Lab</a>. Before that, I received my B.E. degree from <a href="http://www.cse.zju.edu.cn/cseenglish/main.htm">Zhejiang University</a> with honors from <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>, advised by <a href="https://person.zju.edu.cn/en/shibohe#0">Prof. Shibo He</a>.</p>
-                <p>I enjoy anime, manga, and video games. I am also a big fan of traveling and photography.</p>
-                <p>My research interests lie in <b>Machine Learning Systems</b>, <b>AI Infra</b>, and <b>broad Artificial Intelligence</b>.</p>
-                <p style="text-align:center;"><a href="mailto:j1shen@comp.nus.edu.sg">Email</a> &nbsp;/&nbsp;<a href="https://scholar.google.com/citations?user=YgWz1yMAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;<a href="https://www.linkedin.com/in/junyi-shen">LinkedIn</a> &nbsp;/&nbsp;<a href="https://github.com/j1shen">Github</a></p>
-              </td>
-              <td style="width:37%;text-align:center;">
-                <a href="images/avater.png"><img src="images/avater.png" alt="profile photo" class="profile-img"></a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div>
+          <img src="images/avater.png" alt="Junyi Shen" class="profile-img" />
+          <p class="caption">Photo in Osaka</p>
+        </div>
+        <div>
+          <h1 class="name">Junyi Shen</h1>
+          <p>Hey, I'm Junyi Shen, a second-year PhD student at the <a href="https://www.comp.nus.edu.sg/"><b>School of Computing</b></a>, <b>National University of Singapore</b>, advised by <a href="https://yao.lu/">Prof. Yao Lu</a> in the <a href="https://yao.lu/students.html">Scalable AI Lab</a>. I received my B.E. degree from <a href="http://www.cse.zju.edu.cn/cseenglish/main.htm">Zhejiang University</a> with honors from <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>.</p>
+          <p>My research lies in <b>Machine Learning Systems</b>, <b>AI Infrastructure</b>, and <b>Broad AI</b>. Outside academia, I enjoy anime, manga, video games, travel, and photography.</p>
+          <p><a href="mailto:j1shen@comp.nus.edu.sg">Email</a> / <a href="https://scholar.google.com/citations?user=YgWz1yMAAAAJ&hl=en">Scholar</a> / <a href="https://www.linkedin.com/in/junyi-shen">LinkedIn</a> / <a href="https://github.com/j1shen">GitHub</a></p>
+        </div>
       </div>
 
       <!-- Recent News -->
@@ -50,14 +51,15 @@
         <table>
           <tbody>
             <tr>
-              <td><img src="images/nus.jpg" alt="nus" class="logo-img"></td>
+              <td><img src="images/nus.png" alt="nus" class="logo-img"></td>
               <td>
                 <b>National University of Singapore</b>, Singapore<br>
                 <i>Ph.D. in Computer Science</i>, 2024 - Present<br>
                 President Graduate Fellowship <b>(PGF)</b><br>
                 Advisor: <a href="https://yao.lu/">Yao Lu</a><br>
                 GPA: 4.9/5.0<br>
-                <details><summary>Selected Courses</summary>
+                <details>
+                  <summary>Selected Courses</summary>
                   <ul>
                     <li>CS6216: Advanced Topics in Machine Learning</li>
                     <li>CS6223: Advanced Topics in Software Testing</li>
@@ -93,8 +95,8 @@
                 <span class="papertitle">SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism</span><br>
                 <a href="https://scholar.google.com/citations?user=kYveqcQAAAAJ&hl=en&oi=ao">Yuhao Shen*</a>, <strong>Junyi Shen*</strong>, Quan Kong, <a href="https://smart-lty.github.io/">Tianyu Liu</a>, <a href="https://yao.lu/">Yao Lu</a>, <a href="https://cwang-zju.github.io/">Cong Wang</a><br>
                 Submitted to <em>NeurIPS 2025</em><br>
-                <a href="https://arxiv.org/abs/2506.01979">arXiv</a>
-                <p>A comprehensive pipeline to accelerate Speculative Decoding via a hybrid parallelism method.</p>
+                <a href="https://arxiv.org/abs/2506.01979">arXiv</a><br>
+                A comprehensive pipeline to accelerate Speculative Decoding via a hybrid parallelism method.
               </td>
             </tr>
           </tbody>
@@ -116,7 +118,7 @@
               </td>
             </tr>
             <tr>
-              <td><img src="images/hku.jpg" alt="hku" class="logo-img"></td>
+              <td><img src="images/hku.png" alt="hku" class="logo-img"></td>
               <td>
                 <b>Student Research Assistant, The University of Hong Kong</b><br>
                 July. 2023 - Aug. 2023<br>
