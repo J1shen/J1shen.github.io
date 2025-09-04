@@ -1,83 +1,129 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <title>Junyi Shen</title>
-    <meta name="author" content="Junyi Shen">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/avater.jpg" type="image/x-icon">
+    <meta name="author" content="Junyi Shen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Junyi Shen — PhD student at NUS School of Computing. Research in ML Systems, AI Infrastructure, Broad AI."
+    />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Junyi Shen" />
+    <meta property="og:description" content="PhD student at NUS; ML Systems & AI Infrastructure." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/avatar.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="images/avatar.jpg" type="image/jpeg" />
 
     <!-- Google Font: Merriweather -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Inline override to apply Merriweather globally -->
-    <style>
-      body { font-family: 'Merriweather', serif; }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- External Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="wrapper">
       <!-- Personal Intro -->
-      <div class="personal-intro">
+      <header class="personal-intro" aria-labelledby="name">
+        <figure>
+          <img src="images/avatar.jpg" alt="Portrait of Junyi Shen" class="profile-img" />
+          <figcaption class="caption">Photo in Osaka</figcaption>
+        </figure>
         <div>
-          <img src="images/avater.png" alt="Junyi Shen" class="profile-img" />
-          <p class="caption">Photo in Osaka</p>
+          <h1 id="name" class="name">Junyi Shen (沈骏一)</h1>
+          <p>
+            Hey, I'm Junyi Shen, a second-year PhD student at the
+            <a href="https://www.comp.nus.edu.sg/"><strong>School of Computing</strong></a>,
+            <strong>National University of Singapore</strong>, advised by
+            <a href="https://yao.lu/">Prof. Yao Lu</a> in the
+            <a href="https://yao.lu/students.html">Scalable AI Lab</a>. I received my B.E. degree from
+            <a href="http://www.cse.zju.edu.cn/cseenglish/main.htm">Zhejiang University</a> with honors from
+            <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>.
+          </p>
+          <p>
+            My research lies in <strong>Machine Learning Systems</strong>, <strong>AI Infrastructure</strong>, and
+            <strong>Broad AI</strong>. Outside academia, I enjoy anime, manga, video games, travel, and photography.
+          </p>
+          <p class="links">
+            <a href="mailto:j1shen@comp.nus.edu.sg" aria-label="Email Junyi">Email</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://scholar.google.com/citations?user=YgWz1yMAAAAJ&hl=en">Scholar</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://www.linkedin.com/in/junyi-shen">LinkedIn</a>
+            <span aria-hidden="true">/</span>
+            <a href="https://github.com/j1shen">GitHub</a>
+          </p>
+
+          <div class="toolbar">
+            <button class="mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
+          </div>
         </div>
-        <div>
-          <h1 class="name">Junyi Shen (沈骏一)</h1>
-          <p>Hey, I'm Junyi Shen, a second-year PhD student at the <a href="https://www.comp.nus.edu.sg/"><b>School of Computing</b></a>, <b>National University of Singapore</b>, advised by <a href="https://yao.lu/">Prof. Yao Lu</a> in the <a href="https://yao.lu/students.html">Scalable AI Lab</a>. I received my B.E. degree from <a href="http://www.cse.zju.edu.cn/cseenglish/main.htm">Zhejiang University</a> with honors from <a href="http://ckc.zju.edu.cn/ckcen/">Chu Kochen Honors College</a>.</p>
-          <p>My research lies in <b>Machine Learning Systems</b>, <b>AI Infrastructure</b>, and <b>Broad AI</b>. Outside academia, I enjoy anime, manga, video games, travel, and photography.</p>
-          <p><a href="mailto:j1shen@comp.nus.edu.sg">Email</a> / <a href="https://scholar.google.com/citations?user=YgWz1yMAAAAJ&hl=en">Scholar</a> / <a href="https://www.linkedin.com/in/junyi-shen">LinkedIn</a> / <a href="https://github.com/j1shen">GitHub</a></p>
-        </div>
-      </div>
+      </header>
 
       <!-- Recent News -->
-      <section class="news">
-        <h2>Recent News</h2>
-        <div class="news-list">
-          <ul>
-            <li>[2025/5/15] <a href="https://arxiv.org/abs/2506.01979">SpecBranch</a> submitted to arxiv!</li>
-            <li>[2024/8/10] I'm currently pursuing my PhD at NUS!</li>
-          </ul>
-        </div>
+      <section class="news" aria-labelledby="news-heading">
+        <h2 id="news-heading">Recent News</h2>
+        <ul class="news-list">
+          <li>
+            <time datetime="2025-09-02">[2025/09/02]</time>
+            <a href="https://arxiv.org/abs/2509.02121">Halo</a> is submitted to arXiv!
+          </li>
+          <li>
+            <time datetime="2025-05-15">[2025/05/15]</time>
+            <a href="https://arxiv.org/abs/2506.01979">SpecBranch</a> is submitted to arXiv!
+          </li>
+          <li><time datetime="2024-08-10">[2024/08/10]</time> I'm currently pursuing my PhD at NUS!</li>
+        </ul>
       </section>
 
       <!-- Education -->
-      <section class="education">
-        <h2>Education</h2>
-        <table>
+      <section class="education" aria-labelledby="edu-heading">
+        <h2 id="edu-heading">Education</h2>
+        <table class="edu-table" role="table">
           <tbody>
             <tr>
-              <td><img src="images/nus.png" alt="nus" class="logo-img"></td>
+              <td class="logo-cell">
+                <img src="images/nus.png" alt="National University of Singapore logo" class="logo-img" />
+              </td>
               <td>
-                <b>National University of Singapore</b>, Singapore<br>
-                <i>Ph.D. in Computer Science</i>, 2024 - Present<br>
-                President Graduate Fellowship <b>(PGF)</b><br>
-                Advisor: <a href="https://yao.lu/">Yao Lu</a><br>
-                GPA: 4.9/5.0<br>
+                <strong>National University of Singapore</strong>, Singapore<br />
+                <em>Ph.D. in Computer Science</em>, 2024 – Present<br />
+                President Graduate Fellowship <strong>(PGF)</strong><br />
+                Advisor: <a href="https://yao.lu/">Yao Lu</a><br />
+                GPA: 4.9/5.0
                 <details>
                   <summary>Selected Courses</summary>
                   <ul>
-                    <li>CS6216: Advanced Topics in Machine Learning</li>
-                    <li>CS6223: Advanced Topics in Software Testing</li>
-                    <li>CS6222: Advanced Topics in Computational Biology</li>
-                    <li>CS6240: Multimedia Analysis</li>
+                    <li>CS5239: Computer System Performance Analysis</li>
                     <li>CS6206: Advanced Topics in Human-Computer Interaction</li>
+                    <li>CS6216: Advanced Topics in Machine Learning</li>
+                    <li>CS6222: Advanced Topics in Computational Biology</li>
+                    <li>CS6223: Advanced Topics in Software Testing</li>
+                    <li>CS6240: Multimedia Analysis</li>
                   </ul>
                 </details>
               </td>
             </tr>
             <tr>
-              <td><img src="images/zju.png" alt="zju" class="logo-img"></td>
+              <td class="logo-cell">
+                <img src="images/zju.png" alt="Zhejiang University logo" class="logo-img" />
+              </td>
               <td>
-                <b>Zhejiang University</b>, Hangzhou, China<br>
-                <i>Bachelor of Engineering in Automation</i>, 2020 - 2024<br>
-                Minor in Intensive Training Program of Innovation and Entrepreneurship, Chu Kochen Honors College<br>
-                National Scholarship<br>
-                Advisor: <a href="https://person.zju.edu.cn/en/shibohe#0">Shibo He</a><br>
+                <strong>Zhejiang University</strong>, Hangzhou, China<br />
+                <em>Bachelor of Engineering in Automation</em>, 2020 – 2024<br />
+                Minor in Intensive Training Program of Innovation and Entrepreneurship, Chu Kochen Honors College<br />
+                National Scholarship<br />
+                Advisor: <a href="https://person.zju.edu.cn/en/shibohe#0">Shibo He</a><br />
                 GPA: 3.98/4.00
               </td>
             </tr>
@@ -86,44 +132,79 @@
       </section>
 
       <!-- Publications -->
-      <section class="publications">
-        <h2>Publications</h2>
-        <table>
-          <tbody>
-            <tr>
-              <td><img src="images/specbranch.png" alt="SpecBranch"></td>
-              <td>
-                <span class="papertitle">SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism</span><br>
-                <a href="https://scholar.google.com/citations?user=kYveqcQAAAAJ&hl=en&oi=ao">Yuhao Shen*</a>, <strong>Junyi Shen*</strong>, Quan Kong, <a href="https://smart-lty.github.io/">Tianyu Liu</a>, <a href="https://yao.lu/">Yao Lu</a>, <a href="https://cwang-zju.github.io/">Cong Wang</a><br>
-                Submitted to <em>arxiv</em><br>
-                <a href="https://arxiv.org/abs/2506.01979">arXiv</a><br>
-                A comprehensive pipeline to accelerate Speculative Decoding via a hybrid parallelism method.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <section class="publications" aria-labelledby="pubs-heading">
+        <h2 id="pubs-heading">Publications</h2>
+
+        <!-- Paper: Halo -->
+        <article class="pub">
+          <div class="pub-media">
+            <img src="images/halo.png" alt="Halo illustration" />
+          </div>
+          <div class="pub-body">
+            <h3 class="papertitle">
+              Halo: Batch Query Processing and Optimization for Agentic Workflows
+            </h3>
+            <p class="authors">
+              <strong>Junyi Shen</strong>, Noppanat Wadlom, <a href="https://yao.lu/">Yao Lu</a>
+            </p>
+            <p class="venue"><em>arXiv</em> (submitted)</p>
+            <p class="links"><a href="https://arxiv.org/abs/2509.02121">arXiv</a></p>
+            <p class="summary">
+              A system that brings batch query processing and optimization into agentic LLM workflows.
+            </p>
+          </div>
+        </article>
+
+        <!-- Paper: SpecBranch -->
+        <article class="pub">
+          <div class="pub-media">
+            <img src="images/specbranch.png" alt="SpecBranch illustration" />
+          </div>
+          <div class="pub-body">
+            <h3 class="papertitle">
+              SpecBranch: Speculative Decoding via Hybrid Drafting and Rollback-Aware Branch Parallelism
+            </h3>
+            <p class="authors">
+              <a href="https://scholar.google.com/citations?user=kYveqcQAAAAJ&hl=en&oi=ao">Yuhao Shen*</a>,
+              <strong>Junyi Shen*</strong>, Quan Kong, <a href="https://smart-lty.github.io/">Tianyu Liu</a>,
+              <a href="https://yao.lu/">Yao Lu</a>, <a href="https://cwang-zju.github.io/">Cong Wang</a>
+            </p>
+            <p class="venue"><em>arXiv</em></p>
+            <p class="links"><a href="https://arxiv.org/abs/2506.01979">arXiv</a></p>
+            <p class="summary">
+              A comprehensive pipeline to accelerate speculative decoding via a hybrid parallelism method.
+            </p>
+          </div>
+        </article>
       </section>
 
+
       <!-- Profession -->
-      <section class="profession">
-        <h2>Profession</h2>
-        <table>
+      <section class="profession" aria-labelledby="prof-heading">
+        <h2 id="prof-heading">Profession</h2>
+        <table class="prof-table" role="table">
           <tbody>
             <tr>
-              <td><img src="images/qz.png" alt="qz" class="logo-img"></td>
+              <td class="logo-cell">
+                <img src="images/qz.png" alt="Shanghai Qi Zhi Institute logo" class="logo-img" />
+              </td>
               <td>
-                <b>Research Intern, Shanghai Qi Zhi Institute</b><br>
-                Nov. 2023 - May. 2024<br>
-                Advisor: <a href="https://people.iiis.tsinghua.edu.cn/~huanchen/index.html">Huanchen Zhang</a>, <a href="https://yao.lu/">Yao Lu</a><br>
+                <strong>Research Intern, Shanghai Qi Zhi Institute</strong><br />
+                Nov. 2023 – May. 2024<br />
+                Advisor:
+                <a href="https://people.iiis.tsinghua.edu.cn/~huanchen/index.html">Huanchen Zhang</a>,
+                <a href="https://yao.lu/">Yao Lu</a><br />
                 Shanghai, China
               </td>
             </tr>
             <tr>
-              <td><img src="images/hku.png" alt="hku" class="logo-img"></td>
+              <td class="logo-cell">
+                <img src="images/hku.png" alt="The University of Hong Kong logo" class="logo-img" />
+              </td>
               <td>
-                <b>Student Research Assistant, The University of Hong Kong</b><br>
-                July. 2023 - Aug. 2023<br>
-                Advisor: <a href="https://hszhao.github.io/">Hengshuang Zhao</a><br>
+                <strong>Student Research Assistant, The University of Hong Kong</strong><br />
+                July. 2023 – Aug. 2023<br />
+                Advisor: <a href="https://hszhao.github.io/">Hengshuang Zhao</a><br />
                 Hong Kong SAR, China
               </td>
             </tr>
@@ -132,16 +213,50 @@
       </section>
 
       <!-- Teaching -->
-      <section class="teaching">
-        <h2>Teaching</h2>
-        <p><b>Teaching Assistant, NUS</b><br><i>CS6216: Advanced Topics in Machine Learning</i>, 2025-2026 SEM1</p>
+      <section class="teaching" aria-labelledby="teach-heading">
+        <h2 id="teach-heading">Teaching</h2>
+        <p>
+          <strong>Teaching Assistant, NUS</strong><br /><em>CS6216: Advanced Topics in Machine Learning</em>, 2025–2026
+          SEM1
+        </p>
       </section>
 
       <!-- Footer -->
       <footer class="footer">
-        Friendly Link: <a href="https://anxy02.github.io/">Xinyuan An</a><br>
-        Modified from <a href="https://github.com/jonbarron/jonbarron_website">jonbarron</a>.
+        Friendly Link: <a href="https://anxy02.github.io/">Xinyuan An</a>
       </footer>
     </div>
+
+    <!-- Theme toggle script (persisted) -->
+    <script>
+      (function () {
+        const ROOT = document.documentElement;
+        const modeBtn = document.querySelector(".mode-toggle");
+        const MODE_KEY = "theme-preference";
+
+        const prefersDark =
+          window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const savedMode = localStorage.getItem(MODE_KEY);
+        const startDark = savedMode ? savedMode === "dark" : prefersDark;
+
+        function applyMode(dark) {
+          ROOT.classList.toggle("dark-mode", dark);
+          if (modeBtn) {
+            modeBtn.textContent = dark ? "☀️" : "🌓";
+            modeBtn.setAttribute("aria-label", dark ? "Toggle light mode" : "Toggle dark mode");
+            modeBtn.title = dark ? "Light mode" : "Dark mode";
+          }
+        }
+
+        applyMode(startDark);
+
+        modeBtn &&
+          modeBtn.addEventListener("click", () => {
+            const isDark = !ROOT.classList.contains("dark-mode");
+            applyMode(isDark);
+            localStorage.setItem(MODE_KEY, isDark ? "dark" : "light");
+          });
+      })();
+    </script>
   </body>
 </html>
