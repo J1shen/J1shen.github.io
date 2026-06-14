@@ -8,4 +8,4 @@ ALLOWED_ORIGIN = "https://j1shen.github.io"
 [[d1_databases]]
 binding = "DB"
 database_name = "j1shen-visitor-stats"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_id = "bcd043ce-d74b-4bf7-9a70-53fdae4c486e"
