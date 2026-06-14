@@ -1,0 +1,11 @@
+name = "j1shen-visitor-stats"
+main = "src/index.js"
+compatibility_date = "2026-06-14"
+
+[vars]
+ALLOWED_ORIGIN = "https://j1shen.github.io"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "j1shen-visitor-stats"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
