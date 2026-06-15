@@ -22,11 +22,11 @@
 
     <link rel="icon" href="images/avatar.jpg" type="image/jpeg" />
 
-    <!-- Google Font: Merriweather -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Merriweather:wght@700&amp;display=swap"
       rel="stylesheet"
     />
 
@@ -37,11 +37,19 @@
   <body data-stats-api="https://j1shen-visitor-stats.j1shen.workers.dev">
     <div class="wrapper">
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#news-heading">News</a>
-        <a href="#pubs-heading">Publications</a>
-        <a href="#edu-heading">Education</a>
-        <a href="#prof-heading">Experience</a>
-        <a href="#teach-heading">Teaching</a>
+        <a href="#name" class="brand" aria-label="National University of Singapore">
+          <img src="images/nus.png" alt="National University of Singapore logo" />
+        </a>
+        <div class="nav-links">
+          <a href="#news-heading">News</a>
+          <a href="#pubs-heading">Publications</a>
+          <a href="#edu-heading">Education</a>
+          <a href="#prof-heading">Experience</a>
+          <a href="#teach-heading">Teaching</a>
+          <button class="mode-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+            Dark mode
+          </button>
+        </div>
       </nav>
 
       <!-- Personal Intro -->
@@ -51,6 +59,7 @@
           <figcaption class="caption">Photo in Osaka</figcaption>
         </figure>
         <div>
+          <p class="eyebrow">Ph.D. Student · National University of Singapore</p>
           <h1 id="name" class="name">Junyi Shen (沈骏一)</h1>
           <p>
             Hey, I'm Junyi Shen, a PhD student at the
@@ -66,21 +75,23 @@
             <strong>inference optimization</strong>. Outside academia, I enjoy anime, manga, video games, travel,
             and photography.
           </p>
-          <p class="links">
+          <p class="research-tags" aria-label="Research interests">
+            <span>LLM Systems</span>
+            <span>Agentic Workflows</span>
+            <span>Inference Optimization</span>
+            <span>AI Infrastructure</span>
+          </p>
+          <p class="links contact-links">
             <a href="mailto:j1shen@comp.nus.edu.sg" aria-label="Email Junyi">Email</a>
-            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">·</span>
             <a href="https://scholar.google.com/citations?user=YgWz1yMAAAAJ&hl=en">Scholar</a>
-            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">·</span>
             <a href="https://www.linkedin.com/in/junyi-shen">LinkedIn</a>
-            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">·</span>
             <a href="https://github.com/j1shen">GitHub</a>
-            <span aria-hidden="true">/</span>
+            <span aria-hidden="true">·</span>
             <a href="files/Junyi_Shen_CV.pdf" target="_blank" rel="noopener">CV</a>
           </p>
-
-          <div class="toolbar">
-            <button class="mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌓</button>
-          </div>
         </div>
       </header>
 
@@ -385,7 +396,7 @@
         function applyMode(dark) {
           ROOT.classList.toggle("dark-mode", dark);
           if (modeBtn) {
-            modeBtn.textContent = dark ? "☀️" : "🌓";
+            modeBtn.textContent = dark ? "Light mode" : "Dark mode";
             modeBtn.setAttribute("aria-label", dark ? "Toggle light mode" : "Toggle dark mode");
             modeBtn.title = dark ? "Light mode" : "Dark mode";
           }
