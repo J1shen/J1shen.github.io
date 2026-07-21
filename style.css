@@ -236,6 +236,22 @@ section h2::after {
 .papertitle { margin: 0 0 0.45rem; font-size: 1.02rem; line-height: 1.45; }
 .authors, .venue, .links, .summary, .author-note { margin: 0.3rem 0; }
 .author-note { color: var(--muted); font-size: 0.85rem; }
+.pub-award {
+  max-width: 330px;
+  margin: 0.85rem 0 0;
+}
+.pub-award img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  box-shadow: 0 10px 26px rgba(20, 44, 68, 0.1);
+}
+.pub-award figcaption {
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
 
 .footer { padding: 2rem 0 0; color: var(--muted); font-size: 0.82rem; }
 .visitor-stats {
