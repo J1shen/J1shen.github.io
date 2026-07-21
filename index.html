@@ -237,16 +237,16 @@
             <p class="venue"><em>ACL 2026</em> (Oral, Best Paper Candidate, SAC Highlight)</p>
             <p class="links">
               <a href="https://arxiv.org/abs/2601.05524">arXiv</a>,
-              <a href="pubs/Double-SAC-Highlight.jpg">SAC Highlight certificate</a>
+              <a href="pubs/Double-SAC-Highlight-clean.jpg">SAC Highlight certificate</a>
             </p>
             <p class="summary">
               A training-free speculative decoding method that breaks the speedup limit of parallel decoding via double retrieval.
             </p>
             <figure class="pub-award">
-              <a href="pubs/Double-SAC-Highlight.jpg">
-                <img src="pubs/Double-SAC-Highlight.jpg" alt="ACL 2026 SAC Highlight certificate for Double" loading="lazy" />
-              </a>
-              <figcaption>ACL 2026 SAC Highlight</figcaption>
+              <button class="pub-award-trigger" type="button" aria-haspopup="dialog" aria-controls="sac-certificate-dialog">
+                <img src="pubs/Double-SAC-Highlight-clean.jpg" alt="ACL 2026 SAC Highlight certificate for Double" loading="lazy" />
+              </button>
+              <figcaption>ACL 2026 SAC Highlight. Click to enlarge.</figcaption>
             </figure>
           </div>
         </article>
@@ -396,6 +396,16 @@
       </footer>
     </div>
 
+    <dialog class="certificate-modal" id="sac-certificate-dialog" aria-labelledby="sac-certificate-title">
+      <div class="certificate-modal-content">
+        <div class="certificate-modal-header">
+          <h2 id="sac-certificate-title">ACL 2026 SAC Highlight</h2>
+          <button class="certificate-modal-close" type="button" aria-label="Close certificate">Close</button>
+        </div>
+        <img src="pubs/Double-SAC-Highlight-clean.jpg" alt="ACL 2026 SAC Highlight certificate for Double" />
+      </div>
+    </dialog>
+
     <!-- Theme toggle script (persisted) -->
     <script>
       (function () {
@@ -425,6 +435,21 @@
             applyMode(isDark);
             localStorage.setItem(MODE_KEY, isDark ? "dark" : "light");
           });
+      })();
+    </script>
+    <script>
+      (function () {
+        const trigger = document.querySelector(".pub-award-trigger");
+        const dialog = document.querySelector("#sac-certificate-dialog");
+        const closeButton = document.querySelector(".certificate-modal-close");
+
+        if (!trigger || !dialog || !closeButton) return;
+
+        trigger.addEventListener("click", () => dialog.showModal());
+        closeButton.addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => {
+          if (event.target === dialog) dialog.close();
+        });
       })();
     </script>
     <script src="visitor-stats.js" defer></script>

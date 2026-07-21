@@ -237,10 +237,19 @@ section h2::after {
 .authors, .venue, .links, .summary, .author-note { margin: 0.3rem 0; }
 .author-note { color: var(--muted); font-size: 0.85rem; }
 .pub-award {
-  max-width: 330px;
+  max-width: 190px;
   margin: 0.85rem 0 0;
 }
-.pub-award img {
+.pub-award-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  cursor: zoom-in;
+}
+.pub-award-trigger img {
   display: block;
   width: 100%;
   border: 1px solid var(--border);
@@ -252,6 +261,35 @@ section h2::after {
   color: var(--muted);
   font-size: 0.78rem;
 }
+.certificate-modal {
+  width: min(94vw, 1100px);
+  max-width: none;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.4);
+}
+.certificate-modal::backdrop { background: rgba(0, 0, 0, 0.72); }
+.certificate-modal-content { padding: 1rem; }
+.certificate-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.certificate-modal-header h2 { margin: 0; font-size: 1rem; }
+.certificate-modal-close {
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--surface-soft);
+  color: var(--text);
+  cursor: pointer;
+}
+.certificate-modal img { display: block; width: 100%; max-height: 78vh; object-fit: contain; }
 
 .footer { padding: 2rem 0 0; color: var(--muted); font-size: 0.82rem; }
 .visitor-stats {
