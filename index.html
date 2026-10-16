@@ -202,6 +202,34 @@
       <!-- Publications -->
       <section class="publications" aria-labelledby="pubs-heading">
         <h2 id="pubs-heading">Publications</h2>
+        <!-- Paper: DynBranch -->
+        <article class="pub">
+          <div class="pub-media">
+            <img src="pubs/DynBranch.png" alt="DynBranch system architecture" loading="lazy" />
+          </div>
+          <div class="pub-body">
+            <h3 class="papertitle">DynBranch: Speculative Subgraph Reuse for Dynamic Agentic LLM Serving</h3>
+            <p class="authors"><strong>Junyi Shen</strong>, <a href="https://kaiitunnz.github.io/">Noppanat Wadlom</a>, Zhengyuan Su, <a href="https://yao.lu/">Yao Lu</a></p>
+            <p class="venue"><em>arXiv preprint, 2026</em> (Submitted to EuroSys 2027)</p>
+            <p class="links"><a href="https://arxiv.org/abs/2609.31047">arXiv</a></p>
+            <p class="summary">Speculative execution and cross-request subgraph reuse for dynamic agentic LLM workflows, with load-aware admission control.</p>
+          </div>
+        </article>
+
+        <!-- Paper: GRAFT -->
+        <article class="pub">
+          <div class="pub-media">
+            <img src="pubs/GRAFT.png" alt="GRAFT pruning and retrieval framework overview" loading="lazy" />
+          </div>
+          <div class="pub-body">
+            <h3 class="papertitle">Draft Less, Retrieve More: Hybrid Tree Construction for Speculative Decoding</h3>
+            <p class="authors">Yuhao Shen, Tianyu Liu, Xinyi Hu, Jinyang Wu, <strong>Junyi Shen</strong>, Quan Kong, Zhang Baolin, Jun Zhang, Jun Dai, Shuang Ge, Chen Lei, Yue Li, Mingcheng Wan, Cong Wang</p>
+            <p class="venue"><em>NeurIPS 2026 MLForSys Workshop</em> (Poster); submitted to ACL ARR, August 2026</p>
+            <p class="links"><a href="https://openreview.net/forum?id=GprgpHa3KK">paper</a></p>
+            <p class="summary">GRAFT couples draft-tree pruning with token retrieval to recover candidate coverage and accelerate speculative decoding without additional training.</p>
+          </div>
+        </article>
+
         <!-- Paper: Lumilake -->
         <article class="pub">
           <div class="pub-media">
@@ -303,7 +331,7 @@
             <p class="authors">
               <strong>Junyi Shen</strong>, <a href="https://kaiitunnz.github.io/">Noppanat Wadlom</a>, <a href="https://yao.lu/">Yao Lu</a>
             </p>
-            <p class="venue"><em>arXiv preprint</em> (Submitted to The VLDB Journal)</p>
+            <p class="venue"><em>arXiv preprint</em> (Submitted to EDBT 2027)</p>
             <p class="links"><a href="https://arxiv.org/abs/2509.02121">arXiv</a>, <a href="https://github.com/mlsys-io/Halo_demo">code</a></p>
             <p class="summary">
               A system that brings batch query processing and optimization into agentic LLM workflows.
@@ -428,7 +456,7 @@
       <div class="certificate-modal-content">
         <div class="certificate-modal-header">
           <h2 id="sac-certificate-title">ACL 2026 SAC Highlight</h2>
-          <button class="certificate-modal-close" type="button" aria-label="Close certificate">Close</button>
+          <button class="certificate-modal-close" type="button" aria-label="Close image preview">Close</button>
         </div>
         <img src="pubs/Double-SAC-Highlight-clean.jpg" alt="ACL 2026 SAC Highlight certificate for Double" />
       </div>
@@ -467,13 +495,36 @@
     </script>
     <script>
       (function () {
-        const trigger = document.querySelector(".pub-award-trigger");
         const dialog = document.querySelector("#sac-certificate-dialog");
         const closeButton = document.querySelector(".certificate-modal-close");
+        const preview = dialog && dialog.querySelector("img");
+        const title = dialog && dialog.querySelector("h2");
 
-        if (!trigger || !dialog || !closeButton) return;
+        if (!dialog || !closeButton || !preview || !title) return;
 
-        trigger.addEventListener("click", () => dialog.showModal());
+        function openPreview(image) {
+          preview.src = image.currentSrc || image.src;
+          preview.alt = image.alt;
+          title.textContent = image.alt || "Image preview";
+          dialog.showModal();
+        }
+
+        document.querySelectorAll(".pub-media img").forEach((image) => {
+          const trigger = document.createElement("button");
+          trigger.type = "button";
+          trigger.className = "pub-image-trigger";
+          trigger.setAttribute("aria-label", "Enlarge: " + image.alt);
+          trigger.setAttribute("aria-haspopup", "dialog");
+          trigger.title = "Click to enlarge";
+          image.before(trigger);
+          trigger.append(image);
+          trigger.addEventListener("click", () => openPreview(image));
+        });
+
+        const awardTrigger = document.querySelector(".pub-award-trigger");
+        if (awardTrigger) {
+          awardTrigger.addEventListener("click", () => openPreview(awardTrigger.querySelector("img")));
+        }
         closeButton.addEventListener("click", () => dialog.close());
         dialog.addEventListener("click", (event) => {
           if (event.target === dialog) dialog.close();

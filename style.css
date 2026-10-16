@@ -232,7 +232,21 @@ section h2::after {
   max-height: 160px;
   object-fit: contain;
 }
+.pub-image-trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.pub-image-trigger:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
 .publications .pub-body { min-width: 0; font-size: 0.93rem; }
+.publications .pub-body:only-child { grid-column: 1 / -1; }
 .papertitle { margin: 0 0 0.45rem; font-size: 1.02rem; line-height: 1.45; }
 .authors, .venue, .links, .summary, .author-note { margin: 0.3rem 0; }
 .author-note { color: var(--muted); font-size: 0.85rem; }
