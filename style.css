@@ -1,4 +1,5 @@
 :root {
+  --nav-offset: 84px;
   color-scheme: light;
   --bg: #f6f8fb;
   --surface: #ffffff;
@@ -30,6 +31,10 @@ html.dark-mode {
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; font-size: 17px; }
+:is(h1, h2)[id] { scroll-margin-top: var(--nav-offset); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 body {
   margin: 0;
   background: var(--bg);
@@ -94,7 +99,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   font-weight: 600;
   text-decoration: none;
 }
-.nav-links a:hover { color: var(--link); }
+.nav-links a:hover, .nav-links a[aria-current="location"] { color: var(--link); }
+.nav-links a[aria-current="location"] {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.4em;
+}
 .mode-toggle {
   padding: 0.42rem 0.7rem;
   border: 1px solid var(--border);
@@ -314,6 +324,17 @@ section h2::after {
   background: var(--surface);
 }
 .visitor-summary { margin: 0; color: var(--text); }
+.stats-status { margin: 0.4rem 0 0; color: var(--muted); }
+.stats-retry {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--surface-soft);
+  color: var(--link);
+  font: inherit;
+  cursor: pointer;
+}
 .region-details { margin-top: 0.5rem; }
 .region-list { display: grid; gap: 0.5rem; margin-top: 0.75rem; }
 .region-row {

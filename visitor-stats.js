@@ -1,8 +1,15 @@
 (function () {
   const container = document.querySelector(".visitor-stats");
   const endpoint = (document.body.dataset.statsApi || "").trim().replace(/\/$/, "");
+  const status = container && container.querySelector(".stats-status");
+  const retry = container && container.querySelector(".stats-retry");
+  const details = container && container.querySelector(".region-details");
+  const cacheKey = `visitor-stats:${endpoint}`;
+  let hasStats = false;
 
-  if (!container || !endpoint) {
+  if (!container || !status || !retry || !details) return;
+  if (!endpoint) {
+    status.textContent = "Visitor statistics are not configured.";
     return;
   }
 
@@ -21,6 +28,8 @@
   }
 
   function render(stats) {
+    if (!Number.isFinite(stats.totalVisits) || !Number.isFinite(stats.countryCount) ||
+        !Array.isArray(stats.regions)) throw new Error("Invalid visitor statistics");
     const total = container.querySelector("[data-visit-total]");
     const countries = container.querySelector("[data-country-total]");
     const regionList = container.querySelector("[data-region-list]");
@@ -49,9 +58,29 @@
     });
 
     container.hidden = false;
+    details.hidden = false;
+    hasStats = true;
   }
 
-  async function loadStats() {
+  async function requestStats(path, method) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
+    try {
+      const response = await fetch(`${endpoint}/${path}`, {
+        method,
+        headers: { Accept: "application/json" },
+        signal: controller.signal,
+      });
+      if (!response.ok) throw new Error(`Visitor statistics request failed: ${response.status}`);
+      return await response.json();
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
+  async function loadStats(readOnly = false) {
+    retry.hidden = true;
+    status.textContent = hasStats ? "Updating visitor statistics..." : "Loading visitor statistics...";
     let counted = false;
 
     try {
@@ -60,27 +89,42 @@
       counted = false;
     }
 
-    const response = await fetch(`${endpoint}/${counted ? "stats" : "visit"}`, {
-      method: counted ? "GET" : "POST",
-      headers: { Accept: "application/json" },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Visitor statistics request failed: ${response.status}`);
-    }
-
-    if (!counted) {
+    try {
+      let stats;
+      let recorded = false;
+      if (counted || readOnly) {
+        stats = await requestStats("stats", "GET");
+      } else {
+        try {
+          stats = await requestStats("visit", "POST");
+          recorded = true;
+        } catch {
+          // Do not retry a POST that may already have recorded the visit.
+          stats = await requestStats("stats", "GET");
+        }
+      }
+      render(stats);
       try {
-        sessionStorage.setItem("visitor-counted", "1");
+        if (recorded) sessionStorage.setItem("visitor-counted", "1");
+        localStorage.setItem(cacheKey, JSON.stringify({ stats, savedAt: Date.now() }));
       } catch {
         // Storage can be unavailable in strict privacy modes.
       }
+      status.textContent = "";
+    } catch {
+      status.textContent = hasStats
+        ? "Showing previously loaded statistics. Live updates are temporarily unavailable."
+        : "Visitor statistics are temporarily unavailable. Please try again.";
+      retry.hidden = false;
     }
-
-    render(await response.json());
   }
 
-  loadStats().catch(() => {
-    container.hidden = true;
-  });
+  try {
+    const cached = JSON.parse(localStorage.getItem(cacheKey));
+    if (cached && Date.now() - cached.savedAt < 7 * 24 * 60 * 60 * 1000) render(cached.stats);
+  } catch {
+    // A missing or invalid cache must not prevent a live request.
+  }
+  retry.addEventListener("click", () => loadStats(true));
+  loadStats();
 })();

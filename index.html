@@ -42,10 +42,11 @@
         </a>
         <div class="nav-links">
           <a href="#news-heading">News</a>
-          <a href="#pubs-heading">Publications</a>
           <a href="#edu-heading">Education</a>
+          <a href="#pubs-heading">Publications</a>
           <a href="#prof-heading">Experience</a>
           <a href="#teach-heading">Teaching</a>
+          <a href="#talk-heading">Talks</a>
           <button class="mode-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
             Dark mode
           </button>
@@ -430,13 +431,15 @@
 
       <!-- Footer -->
       <footer class="footer">
-        <div class="visitor-stats" hidden>
+        <div class="visitor-stats">
           <p class="visitor-summary">
             Visited <strong data-visit-total>--</strong> times
             <span aria-hidden="true">·</span>
             From <strong data-country-total>--</strong> countries
           </p>
-          <details class="region-details">
+          <p class="stats-status" role="status">Loading visitor statistics...</p>
+          <button class="stats-retry" type="button" hidden>Retry</button>
+          <details class="region-details" hidden>
             <summary>Visitor regions</summary>
             <div class="region-list" data-region-list></div>
             <p class="privacy-note">Aggregate statistics only. No IP addresses are stored.</p>
@@ -531,6 +534,7 @@
         });
       })();
     </script>
+    <script src="navigation.js" defer></script>
     <script src="visitor-stats.js" defer></script>
   </body>
 </html>
