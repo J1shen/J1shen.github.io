@@ -38,7 +38,13 @@
     countries.textContent = formatter.format(stats.countryCount);
     regionList.replaceChildren();
 
-    stats.regions.forEach((region) => {
+    const regions = stats.regions.filter((region) => region.country !== "TW" && region.country !== "OTHER");
+    const otherPercentage = stats.regions
+      .filter((region) => region.country === "TW" || region.country === "OTHER")
+      .reduce((sum, region) => sum + region.percentage, 0);
+    if (otherPercentage > 0) regions.push({ country: "OTHER", percentage: otherPercentage });
+
+    regions.forEach((region) => {
       const row = document.createElement("div");
       const name = document.createElement("span");
       const bar = document.createElement("span");
